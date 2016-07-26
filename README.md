@@ -6,7 +6,7 @@ An independent Whois Client and Parser written in Javascript.
 
 ### Global
 ```bash
-  $ npm install -g whois
+  $ npm install -g whois-api
 ```
 
 #### CLI usage

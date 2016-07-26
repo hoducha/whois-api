@@ -1,0 +1,41 @@
+{
+  "name": "whois-api",
+  "version": "1.0.0",
+  "description": "An independent Whois Client and Parser written in Javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d build && cp ./src/servers.json ./build",
+    "dev": "npm run build && npm install -g"
+  },
+  "bin": {
+    "whois-api": "./build/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hoducha/whois-api.git"
+  },
+  "keywords": [
+    "whois",
+    "domain",
+    "dns",
+    "lookup"
+  ],
+  "author": "Ha Ho <hoducha@gmail.com> (https://github.com/hoducha)",
+  "license": "FreeBSD",
+  "bugs": {
+    "url": "https://github.com/hoducha/whois-api/issues"
+  },
+  "homepage": "https://github.com/hoducha/whois-api",
+  "npmName": "whois-api",
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-preset-es2015": "^6.9.0"
+  },
+  "dependencies": {
+    "async": "^2.0.1",
+    "commander": "^2.9.0",
+    "lodash": "^4.14.0",
+    "xregexp": "^3.1.1"
+  }
+}

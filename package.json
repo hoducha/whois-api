@@ -1,6 +1,6 @@
 {
   "name": "whois-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An independent Whois Client and Parser written in Javascript.",
   "main": "index.js",
   "scripts": {

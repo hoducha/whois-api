@@ -3,7 +3,7 @@ import program from 'commander';
 import whois from './index';
 
 program
-  .version('1.0.0')
+  .version('1.0.2')
   .arguments('<address> [addresses]')
   .option('-r, --raw', 'Display the raw whois response')
   .parse(process.argv);

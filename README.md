@@ -1,6 +1,6 @@
 # Whois API
 
-An independent Whois Client and Parser written in Javascript.
+A lightweight Whois Client and Parser written in Javascript.
 
 ## Installation
 
@@ -55,4 +55,4 @@ Contributions are welcome.
 
 ## License
 
-Node WHOIS is available under the [BSD (2-Clause) License](http://opensource.org/licenses/BSD-2-Clause).
+Whois API is available under the [BSD (2-Clause) License](http://opensource.org/licenses/BSD-2-Clause).

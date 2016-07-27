@@ -57,12 +57,6 @@ const getServer = (address, aSpecificServer) => {
 }
 
 const lookup = (address, options, callback) => {
-  let validationError = validateAddress(address);
-  if (validationError) {
-    callback(validationError);
-    return;
-  }
-
   if (typeof done === 'undefined' && typeof options === 'function') {
     callback = options;
     options = {};
@@ -72,10 +66,16 @@ const lookup = (address, options, callback) => {
     follow: 2
   });
 
+  callback = _.once(callback);
+
+  let validationError = validateAddress(address);
+  if (validationError) {
+    return callback(validationError);
+  }
+
   const server = getServer(address, options.server);
   if (!server) {
-    callback(new Error('No WHOIS server found for the address'));;
-    return;
+    return callback(new Error('No WHOIS server found for the address'));;
   }
 
   const socket = net.connect(server.port, server.host, function() {
@@ -89,12 +89,10 @@ const lookup = (address, options, callback) => {
     return data += chunk;
   });
   socket.on('timeout', function() {
-    callback(new Error('Connection timeout'));
-    return;
+    return callback(new Error('Connection timeout'));
   });
   socket.on('error', function(err) {
-   callback(err);
-   return;
+   return callback(err);
   });
 
   return socket.on('close', function(err) {

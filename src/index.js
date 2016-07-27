@@ -6,7 +6,7 @@ const rawLookup = client.lookup;
 
 const lookup = (domain, callback) => {
   client.lookup(domain, function(err, data) {
-    callback(err, parser.parse(data));
+    return callback(err, parser.parse(data));
   });
 }
 
@@ -17,9 +17,9 @@ const multiLookup = (domains, callback) => {
       for (let i = 0; i < domains.length; i++) {
         result[domains[i]] = data[i];
       }
-      callback(err, result);
+      return callback(err, result);
     } else {
-      callback(err);
+      return callback(err);
     }
   });
 }
